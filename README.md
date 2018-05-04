@@ -1,4 +1,4 @@
-# angular5.2-laravel5.6
+# angular5.2 and laravel5.6 Authentication and crud
 Angular 5.2 and Laravel 5.6 Authentication and CRUD
 
 <a href="http://angular5.rbsavani.com">Demo</a>
@@ -16,3 +16,4 @@ Angular 5.2 and Laravel 5.6 Authentication and CRUD
 4.After you run passprt:install command you get 2 keys<br>
 	take second key and set it in frontend/enviroments/environment.ts and frontend/enviroments/environment.prod.ts and set backend url ex: http://localhost:8000	<br>
     5.in fronetend run ng serve and in backend run php artisan serve 
+    
