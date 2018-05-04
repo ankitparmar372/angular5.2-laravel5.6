@@ -68,12 +68,7 @@
         <div class="flex-center position-ref full-height">
             <div class="content">
                 <div class="title m-b-md">
-                    Ravi Savani
-                </div>
-
-                <div class="links">
-                    <a target="_blank" href="https://www.linkedin.com/in/ravisavani">Linkedin</a>
-                    <a target="_blank" href="https://www.facebook.com/rbs6908">Facebook</a>
+                    Laravel 5.6
                 </div>
             </div>
         </div>
