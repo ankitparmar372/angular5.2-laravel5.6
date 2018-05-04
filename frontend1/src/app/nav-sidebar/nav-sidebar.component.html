@@ -1,0 +1,31 @@
+<div id="wrapper" [ngClass]="toggledID">
+  <!-- Sidebar -->
+  <div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <a href="#">
+          Start Bootstrap
+        </a>
+      </li>
+      <li>
+        <a routerLink="/book">Books</a>
+      </li>
+      <!-- <li>
+        <a routerLink="/about">About Us</a>
+      </li>
+      <li>
+        <a routerLink="/book">Contact</a>
+      </li> -->
+    </ul>
+  </div>
+  <!-- /#sidebar-wrapper -->
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <div class="container-fluid">
+      <button style="margin-top: 50px;margin-left: -20px" class="btn btn-dark" (click)="sidebarToggle()">
+            <i class="fa fa-bars"></i>
+      </button>
+    </div>
+  </div>
+  <!-- /#page-content-wrapper -->
+</div>

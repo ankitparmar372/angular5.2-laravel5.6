@@ -1,0 +1,73 @@
+<app-nav-header></app-nav-header>
+<!-- <app-nav-sidebar></app-nav-sidebar> -->
+<br><br><br><br>
+<div class="container">
+  <h1>Book List 
+    <a class="btn btn-success pull-right margin-top-10" routerLink="/book/add">
+      <i class="fa fa-plus"></i>
+      Add Book
+    </a>
+  </h1>
+  <p style="color: #FF0000" *ngIf="books?.length == 0" > No Data Found</p>
+  <div class="table-responsive">
+  <table class="table table-bordered" *ngIf="books.length != 0">
+    <thead class="thead-light text-center">
+      <tr class="table-dark">
+        <th>ISBN</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Description</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books | paginate: { id: 'server', itemsPerPage: 3, currentPage: p, totalItems: totalRecords }">
+        <td>{{ book.isbn }}</td>
+        <td>{{ book.title }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.description }}</td>
+        <td style="width: 130px">
+          <button class="btn btn-sm btn-info" (click)="viewImage(book.image)" >
+            <i class="fa fa-eye"></i>
+          </button>
+          <a class="btn btn-sm btn-secondary" routerLink="/book/update/{{book.id}}"><i class="fa fa-edit"></i></a>
+          <!-- <button class="btn btn-danger" (click)="deleteBook(book.id)"><i class="fa fa-trash"></i></button> -->
+          <button class="btn btn-sm btn-danger" [swal]="deleteSwal">
+            <i class="fa fa-trash"></i>
+          </button>
+          <swal #deleteSwal title="Delete" text="This cannot be undone" type="question" [showCancelButton]="true" [focusCancel]="true" (confirm)="deleteBook(book.id)">
+          </swal>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="pull-right col-md-7">
+    <div class="text-right">
+      <!-- <div class="spinner" [ngClass]="{ 'hidden': !loading }"></div> -->
+      <!-- <pagination-controls (pageChange)="getPage($event)" id="server"></pagination-controls> -->
+      <pagination-controls class="my-pagination" id="server" (pageChange)="getPage($event)" maxSize="9" directionLinks="true" autoHide="true" previousLabel="" nextLabel="" screenReaderPaginationLabel="Pagination" screenReaderPageLabel="page" screenReaderCurrentLabel="You're on page">
+      </pagination-controls>
+    </div>
+  </div>
+</div>
+
+
+<!-- Book image view modal -->
+ 
+<div bsModal #BookImageModal="bs-modal" class="modal fade" tabindex="-1"
+     role="dialog" aria-labelledby="dialog-sizes-name1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 id="dialog-sizes-name1" class="modal-title pull-left">Book Cover</h4>
+        <button type="button" class="close pull-right" (click)="BookImageModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img class="img-responsive" width="100%" src="{{bookImage}}">
+      </div>
+    </div>
+  </div>
+</div>

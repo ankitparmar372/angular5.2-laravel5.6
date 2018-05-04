@@ -1,0 +1,42 @@
+<app-nav-header></app-nav-header>
+<!-- <app-nav-sidebar></app-nav-sidebar> -->
+<br><br><br><br>
+<div class="container">
+  <h1>Update Book</h1>
+  <form class="form-book" (ngSubmit)="updateBook()" #bookForm="ngForm">
+    <div class="alert alert-warning alert-dismissible" role="alert" *ngIf="message !== ''">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      {{message}}
+    </div>
+    <div class="form-group">
+      <div class="col-md-12">
+        <label for="isbn">ISBN</label>
+        <input type="text" class="form-control" placeholder="ISBN" [(ngModel)]="bookData.isbn" name="isbn" required/>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-12">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" placeholder="Title" [(ngModel)]="bookData.title" name="title" required/>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-12">
+        <label for="author">Author</label>
+        <input type="text" class="form-control" placeholder="Author" [(ngModel)]="bookData.author" name="author" required/>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-12">
+        <label for="description">Description</label>
+        <input type="text" class="form-control" placeholder="Description" [(ngModel)]="bookData.description" name="description" required/>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-2 margin-top-10">
+        <button class="btn btn-flat btn-primary" type="submit" [disabled]="!bookForm.form.valid">Submit</button>
+        <a class="btn btn-danger" routerLink="/book">Cancel</a>
+      </div>
+    </div>
+  </form>
+</div>

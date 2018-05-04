@@ -1,0 +1,22 @@
+.my-pagination {
+  		font-size: 18px;
+}
+.my-pagination .ngx-pagination .current {
+	background: #FFFFFF;
+	color: #000000;
+	border-bottom: 2px solid #3dffaf;
+	font-weight: 900;
+}
+.my-pagination .ngx-pagination {
+	/*border: 1px solid;*/
+	color: #0000FF;
+}
+.my-pagination .ngx-pagination .disabled {
+	display: none;
+}
+.my-pagination .pagination-next {
+	font-size: 25px;
+}
+.my-pagination .pagination-previous {
+	font-size: 25px;
+}

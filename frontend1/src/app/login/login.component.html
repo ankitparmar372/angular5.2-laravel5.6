@@ -1,0 +1,36 @@
+<br>
+<br>
+<div class="view">
+  <div class="container">
+    <br />
+    <div class="login-form">
+      <form (ngSubmit)="login()" #loginForm="ngForm">
+          <h2 class="text-center">Login</h2>
+          <div class="login">
+          <div *ngIf="errMsgArr.length > 0">
+            <br>
+            <alert type="danger">
+              <strong>Opps!</strong> <br>
+              <ul>
+                <li *ngFor="let tErr of errMsgArr">{{tErr}}</li>
+              </ul>
+            </alert>
+          </div>
+          <br>
+          <hr class="colorgraph">
+          <br>
+          <div class="form-group">
+            <input type="email" name="username" [(ngModel)]="loginData.username" placeholder="Email" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <input type="password" name="password" [(ngModel)]="loginData.password" placeholder="Password" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary btn-block" type="submit" [disabled]="!loginForm.form.valid">Log in</button>
+            <a routerLink="/register" class="btn btn-success btn-block">Register</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
