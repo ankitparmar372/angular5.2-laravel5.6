@@ -1,4 +1,4 @@
-# angular5.2 and laravel5.6 Authentication and crud
+# angular 5.2 and laravel 5.6 Authentication and crud
 
 
 <a href="http://angular5.rbsavani.com">Demo</a>
