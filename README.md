@@ -7,7 +7,7 @@
 
 1.Clone both repository <br>
 2.in Frontend run below command <br>
-	npm install and yarn install
+	npm install and yarn install<br>
 3.In backend run below command <br>
 	composer install<br>
     php artisan key:generate<br>
