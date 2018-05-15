@@ -15,7 +15,7 @@ export class LoginService {
   ) { }
 
   login(loginData){
-    let url = 'http://localhost:8000/oauth/token'
+    let url = this.environmentService.setAuthService('oauth/token')
     return this._http.post(url, loginData)
         .map(res=> res)
         .catch(this.handleError)
